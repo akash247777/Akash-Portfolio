@@ -97,6 +97,24 @@
             border-color: #D4AF37;
         }
         
+        /* Animated white shadow for profile image */
+        .profile-shadow {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: shadow-pulse 2s infinite;
+        }
+        
+        @keyframes shadow-pulse {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+        }
+        
         .hover-gold:hover {
             color: #D4AF37;
         }
@@ -107,6 +125,15 @@
         
         .hover-gold-border:hover {
             border-color: #D4AF37;
+        }
+
+        /* Zoom effect on hover */
+        .hovered-element:hover {
+            transform: scale(1.05);
+        }
+
+        .hovered-element {
+            transition: transform 0.3s ease;
         }
 
         /* Revealing Light Animation */
@@ -243,7 +270,7 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="ph.png" 
-                         alt="Profile" class="rounded-full w-64 h-64 object-cover mx-auto border-4 gold-border">
+                         alt="Profile" class="rounded-full w-64 h-64 object-cover mx-auto border-4 gold-border profile-shadow hovered-element">
                 </div>
                 <div class="md:w-1/2">
                     <h3 class="text-2xl font-semibold mb-4 gold-text">Who I Am</h3>
@@ -309,22 +336,22 @@
                         <p class="text-gray-300 font-semibold mt-1">Apollo Pharmacies Limited, Bengaluru</p>
                         <p class="text-white mt-3">Developing AI applications, automating existing applications, creating interactive websites, and deploying them in the cloud.</p>
                         <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Python</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">SQL</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">MYSQL</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">AWS</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Docker</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">RESTAPI</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">FLASK</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">FASTAPI</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">TENSORFLOW</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">RAG</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">LANGCHAIN</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Streamlit</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">HTML & CSS</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">HUGGINGFACE</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">GIT</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">VIBE CODING</span>                           
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Python</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">SQL</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">MYSQL</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">AWS</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Docker</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">RESTAPI</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">FLASK</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">FASTAPI</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">TENSORFLOW</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">RAG</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">LANGCHAIN</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Streamlit</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">HTML & CSS</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">HUGGINGFACE</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">GIT</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">VIBE CODING</span>                           
                         </div>
                     </div>
                 </div>
@@ -341,9 +368,9 @@
                                                     - Accelerated AI iteration cycles by 25% through structured documentation
                                                     and feedback loops with ML teams.</p>
                         <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Python</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Prompt Engineer</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Creative Thinking</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Python</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Prompt Engineer</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Creative Thinking</span>
                         </div>
                     </div>
                 </div>
@@ -362,14 +389,14 @@
                                                     - Optimized healthcare interventions by identifying top five predictive
                                                     factors through EDA and feature engineering.</p>
                         <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Pyhton</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Pandas</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">numpy</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">matplotlib</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">seaborn</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">sklearn</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">pycaret</span>
-                            <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded">Streamlit</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Pyhton</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Pandas</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">numpy</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">matplotlib</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">seaborn</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">sklearn</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">pycaret</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Streamlit</span>
                         </div>
                     </div>
                 </div>
@@ -391,17 +418,17 @@
                         <h3 class="text-xl font-semibold text-white">Technical Skills</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Python</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">SQL</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">FastAPI</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">TensorFlow</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">PyTorch</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Machine Learning</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">MYSQL</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Natural Language Processing</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Computer Vision</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Docker</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">AWS</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Python</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">SQL</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">FastAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">TensorFlow</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">PyTorch</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Machine Learning</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">MYSQL</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Natural Language Processing</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Computer Vision</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Docker</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">AWS</span>
                     </div>
                 </div>
 
@@ -412,16 +439,16 @@
                         <h3 class="text-xl font-semibold text-white">AI/ML Technologies</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">TensorFlow</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">PyTorch</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Scikit-learn</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Pandas</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">NumPy</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">OpenCV</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Hugging Face</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">LangChain</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">N8N</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">LLM API</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">TensorFlow</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">PyTorch</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Scikit-learn</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Pandas</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">NumPy</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">OpenCV</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Hugging Face</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">LangChain</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">N8N</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">LLM API</span>
                     </div>
                 </div>
 
@@ -432,9 +459,9 @@
                         <h3 class="text-xl font-semibold text-white">Frameworks</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">FastAPI</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">RestAPI</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Flask</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">FastAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">RestAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Flask</span>
                     </div>
                 </div>
 
@@ -445,14 +472,14 @@
                         <h3 class="text-xl font-semibold text-white">Tools & Platforms</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Git</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Docker</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Kubernetes</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">VS Code</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Cursor</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Jupyter Notebook</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">Postman</span>
-                        <span class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition">AWS CLI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Git</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Docker</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Kubernetes</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">VS Code</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Cursor</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Jupyter Notebook</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Postman</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">AWS CLI</span>
                     </div>
                 </div>
             </div>
