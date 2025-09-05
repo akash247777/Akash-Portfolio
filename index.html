@@ -129,10 +129,28 @@
 
         /* Zoom effect on hover */
         .hovered-element:hover {
-            transform: scale(1.5);
+            transform: scale(1.2);
         }
 
         .hovered-element {
+            transition: transform 0.3s ease;
+        }
+
+        /* Profile image zoom effect */
+        .profile-hover:hover {
+            transform: scale(1.7);
+        }
+
+        .profile-hover {
+            transition: transform 0.3s ease;
+        }
+
+        /* Skills section zoom effect */
+        .skills-hover:hover {
+            transform: scale(1.1);
+        }
+
+        .skills-hover {
             transition: transform 0.3s ease;
         }
 
@@ -270,7 +288,7 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <img src="ph.png" 
-                         alt="Profile" class="rounded-full w-64 h-64 object-cover mx-auto border-4 gold-border profile-shadow hovered-element">
+                         alt="Profile" class="rounded-full w-64 h-64 object-cover mx-auto border-4 gold-border profile-shadow profile-hover">
                 </div>
                 <div class="md:w-1/2">
                     <h3 class="text-2xl font-semibold mb-4 gold-text">Who I Am</h3>
@@ -412,74 +430,74 @@
             <h2 class="text-4xl font-bold text-center mb-16 gold-text">MY SKILLS</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Technical Skills -->
-                <div class="bg-blue-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 hovered-element">
-                    <div class="flex items-center mb-6 hovered-element">
-                        <i class="fas fa-code text-2xl text-blue-400 mr-3 hovered-element"></i>
-                        <h3 class="text-xl font-semibold text-white hovered-element">Technical Skills</h3>
+                <div class="bg-blue-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 skills-hover">
+                    <div class="flex items-center mb-6 skills-hover">
+                        <i class="fas fa-code text-2xl text-blue-400 mr-3 skills-hover"></i>
+                        <h3 class="text-xl font-semibold text-white skills-hover">Technical Skills</h3>
                     </div>
-                    <div class="flex flex-wrap gap-3 hovered-element">
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Python</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">SQL</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">FastAPI</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">TensorFlow</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">PyTorch</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Machine Learning</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">MYSQL</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Natural Language Processing</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Computer Vision</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Docker</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">AWS</span>
+                    <div class="flex flex-wrap gap-3 skills-hover">
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Python</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">SQL</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">FastAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">TensorFlow</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">PyTorch</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Machine Learning</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">MYSQL</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Natural Language Processing</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Computer Vision</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Docker</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">AWS</span>
                     </div>
                 </div>
 
                 <!-- AI/ML Technologies -->
-                <div class="bg-purple-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 hovered-element">
-                    <div class="flex items-center mb-6 hovered-element">
-                        <i class="fas fa-atom text-2xl text-purple-400 mr-3 hovered-element"></i>
-                        <h3 class="text-xl font-semibold text-white hovered-element">AI/ML Technologies</h3>
+                <div class="bg-purple-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 skills-hover">
+                    <div class="flex items-center mb-6 skills-hover">
+                        <i class="fas fa-atom text-2xl text-purple-400 mr-3 skills-hover"></i>
+                        <h3 class="text-xl font-semibold text-white skills-hover">AI/ML Technologies</h3>
                     </div>
-                    <div class="flex flex-wrap gap-3 hovered-element">
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">TensorFlow</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">PyTorch</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Scikit-learn</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Pandas</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">NumPy</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">OpenCV</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Hugging Face</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">LangChain</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">N8N</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">LLM API</span>
+                    <div class="flex flex-wrap gap-3 skills-hover">
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">TensorFlow</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">PyTorch</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Scikit-learn</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Pandas</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">NumPy</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">OpenCV</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Hugging Face</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">LangChain</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">N8N</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">LLM API</span>
                     </div>
                 </div>
 
                 <!-- Frameworks -->
-                <div class="bg-green-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 hovered-element">
-                    <div class="flex items-center mb-6 hovered-element">
-                        <i class="fas fa-layer-group text-2xl text-green-400 mr-3 hovered-element"></i>
-                        <h3 class="text-xl font-semibold text-white hovered-element">Frameworks</h3>
+                <div class="bg-green-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 skills-hover">
+                    <div class="flex items-center mb-6 skills-hover">
+                        <i class="fas fa-layer-group text-2xl text-green-400 mr-3 skills-hover"></i>
+                        <h3 class="text-xl font-semibold text-white skills-hover">Frameworks</h3>
                     </div>
-                    <div class="flex flex-wrap gap-3 hovered-element">
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">FastAPI</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">RestAPI</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Flask</span>
+                    <div class="flex flex-wrap gap-3 skills-hover">
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">FastAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">RestAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Flask</span>
                     </div>
                 </div>
 
                 <!-- Tools & Platforms -->
-                <div class="bg-orange-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 hovered-element">
-                    <div class="flex items-center mb-6 hovered-element">
-                        <i class="fas fa-tools text-2xl text-orange-400 mr-3 hovered-element"></i>
-                        <h3 class="text-xl font-semibold text-white hovered-element">Tools & Platforms</h3>
+                <div class="bg-orange-50 bg-opacity-10 p-8 rounded-lg border border-gray-700 skills-hover">
+                    <div class="flex items-center mb-6 skills-hover">
+                        <i class="fas fa-tools text-2xl text-orange-400 mr-3 skills-hover"></i>
+                        <h3 class="text-xl font-semibold text-white skills-hover">Tools & Platforms</h3>
                     </div>
-                    <div class="flex flex-wrap gap-3 hovered-element">
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Git</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Docker</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Kubernetes</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">VS Code</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Cursor</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Jupyter Notebook</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">Postman</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold hovered-element">AWS CLI</span>
+                    <div class="flex flex-wrap gap-3 skills-hover">
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Git</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Docker</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Kubernetes</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">VS Code</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Cursor</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Jupyter Notebook</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Postman</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">AWS CLI</span>
                     </div>
                 </div>
             </div>
