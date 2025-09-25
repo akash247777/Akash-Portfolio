@@ -14,7 +14,125 @@
             background-repeat: no-repeat;
         }
         
-        /* Interactive background particles */
+        /* Night Sky Background with Stars and Meteors */
+        .night-sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            min-height: 100%;
+            background: #000000;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        /* Ensure all sections have transparent/dark backgrounds to show night sky */
+        body {
+            background: transparent !important;
+        }
+        
+        section {
+            background: rgba(0, 0, 0, 0.3) !important;
+            -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+        }
+        
+        .bg-black {
+            background: rgba(0, 0, 0, 0.4) !important;
+        }
+        
+        .bg-gray-900 {
+            background: rgba(17, 24, 39, 0.8) !important;
+        }
+        
+        .bg-gray-800 {
+            background: rgba(31, 41, 55, 0.8) !important;
+        }
+        
+        /* Navigation background adjustment */
+        nav {
+            background: rgba(0, 0, 0, 0.9) !important;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Footer background adjustment */
+        footer {
+            background: rgba(0, 0, 0, 0.8) !important;
+        }
+        
+        /* Blinking Stars */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+        
+        .star.small {
+            width: 1px;
+            height: 1px;
+            box-shadow: 0 0 3px white;
+        }
+        
+        .star.medium {
+            width: 2px;
+            height: 2px;
+            box-shadow: 0 0 5px white;
+        }
+        
+        .star.large {
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 0 8px white;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 10;
+                transform: scale(3);
+            }
+            100% {
+                opacity: 10;
+                transform: scale(1);
+            }
+        }
+        
+        /* Shooting Stars / Meteors */
+        .meteor {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: linear-gradient(-1000deg, rgb(0, 0, 0), transparent);
+            border-radius: 100%;
+            box-shadow: 0 0 10px rgb(209, 22, 22), 0 0 20px rgba(240, 4, 4, 0.5);
+        }
+        
+        .meteor::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100px;
+            background: linear-gradient(to bottom, white, transparent);
+            transform: rotate(-100deg);
+            transform-origin: 0 0;
+        }
+        
+        @keyframes meteor-fall {
+            0% {
+                opacity: 40;
+                transform: translateX(900px) translateY(-100px);
+            }
+            100% {
+                opacity: 30;
+                transform: translateX(-1999px) translateY(600px);
+            }
+        }
+        
+        /* Interactive background particles - keeping original for compatibility */
         .particles-container {
             position: fixed;
             top: 0;
@@ -28,8 +146,8 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             animation: float 15s infinite ease-in-out;
         }
         
@@ -64,9 +182,7 @@
         }
         
         .animated-bg {
-            background: linear-gradient(-45deg, #000, #111, #000);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background: transparent;
         }
         
         .section-divider {
@@ -220,20 +336,58 @@
             border-right: none;
         }
 
-        /* Fade in animation for buttons */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Experience photo carousel styles */
+        .experience-carousel {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 16px;
+        }
+        
+        .experience-photos {
+            display: flex;
+            width: 331%; /* Adjust based on number of photos */
+            height: 200%;
+            transition: transform 0.1s ease-in-out;
+        }
+        
+        .experience-photo {
+            width: 33.222%; /* 100% / number of photos */
+            height: 130%;
+            object-fit: flex;  
+            
+            flex-shrink: 0;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background-color: #D4AF37;
         }
     </style>
 </head>
 <body class="bg-black text-white font-sans">
+    <!-- Night Sky Background -->
+    <div class="night-sky" id="night-sky"></div>
+    
     <!-- Interactive Background Particles -->
     <div class="particles-container" id="particles"></div>
     
@@ -250,7 +404,7 @@
                     <a href="#contact" class="text-white hover:text-gray-300 transition hover-gold">Contact</a>
                     <a href="#links" class="text-white hover:text-gray-300 transition hover-gold">Links</a>
                 </div>
-                <button class="md:hidden text-white focus:outline-none" id="menu-toggle">
+                <button class="md:hidden text-white focus:outline-none" id="menu-toggle" aria-label="Toggle mobile menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -349,6 +503,8 @@
                 <div class="mb-10 relative pl-8 border-l-2 border-gray-700">
                     <div class="absolute -left-2 top-0 w-4 h-4 rounded-full gold-bg"></div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+                        
+                        
                         <span class="text-gray-400 text-sm">(JUL)2024 - Present</span>
                         <h3 class="text-xl font-bold text-white mt-2">AI Software Developer</h3>
                         <p class="text-gray-300 font-semibold mt-1">Apollo Pharmacies Limited, Bengaluru</p>
@@ -371,13 +527,31 @@
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">GIT</span>
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">VIBE CODING</span>                           
                         </div>
+                        
+                        <p class="text-white mt-10"></p>
+                        <!-- Photo Carousel for Experience 1 -->
+                        <div class="experience-carousel" data-carousel="experience-1">
+                            <div class="experience-photos">
+                                <img src="C:\Portfolio\a1.png" alt="Apollo Pharmacies Office" class="experience-photo">
+                                <img src="C:\Portfolio\a2.png" alt="AI Development" class="experience-photo">
+                                <img src="C:\Portfolio\a3.png" alt="Team Collaboration" class="experience-photo">
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="carousel-dot active" data-slide="0"></div>
+                                <div class="carousel-dot" data-slide="1"></div>
+                                <div class="carousel-dot" data-slide="2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
                 
                 <!-- Experience Item 2 -->
                 <div class="mb-10 relative pl-8 border-l-2 border-gray-700">
                     <div class="absolute -left-2 top-0 w-4 h-4 rounded-full gold-bg"></div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+                        
+                        
                         <span class="text-gray-400 text-sm">(JUL)2024 - 2024(SEP)</span>
                         <h3 class="text-xl font-bold text-white mt-2">LLM Prompt Engineer - Remote</h3>
                         <p class="text-gray-300 font-semibold mt-1">Turing, US</p>
@@ -390,6 +564,20 @@
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Prompt Engineer</span>
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Creative Thinking</span>
                         </div>
+                        <p class="text-white mt-10"></p>
+                        <!-- Photo Carousel for Experience 2 -->
+                        <div class="experience-carousel" data-carousel="experience-2">
+                            <div class="experience-photos">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop" alt="Turing Remote Work" class="experience-photo">
+                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop" alt="AI Prompt Engineering" class="experience-photo">
+                                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&h=200&fit=crop" alt="ML Model Training" class="experience-photo">
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="carousel-dot active" data-slide="0"></div>
+                                <div class="carousel-dot" data-slide="1"></div>
+                                <div class="carousel-dot" data-slide="2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -397,6 +585,9 @@
                 <div class="relative pl-8 border-l-2 border-gray-700">
                     <div class="absolute -left-2 top-0 w-4 h-4 rounded-full gold-bg"></div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+                        <!-- Photo Carousel for Experience 3 -->
+                        
+                        
                         <span class="text-gray-400 text-sm">(MAR)2024 - (JUL)2024</span>
                         <h3 class="text-xl font-bold text-white mt-2">AI-ML Intern</h3>
                         <p class="text-gray-300 font-semibold mt-1">Infosys, Bengaluru</p>
@@ -415,6 +606,20 @@
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">sklearn</span>
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">pycaret</span>
                             <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Streamlit</span>
+                        </div>
+
+                        <p class="text-white mt-10"></p>
+                        <div class="experience-carousel" data-carousel="experience-3">
+                            <div class="experience-photos">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop" alt="Infosys Office" class="experience-photo">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Data Analysis" class="experience-photo">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop" alt="Healthcare ML" class="experience-photo">
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="carousel-dot active" data-slide="0"></div>
+                                <div class="carousel-dot" data-slide="1"></div>
+                                <div class="carousel-dot" data-slide="2"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -491,10 +696,13 @@
                     </div>
                     <div class="flex flex-wrap gap-3 skills-hover">
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Git</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">GitHub</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Docker</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Kubernetes</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">VS Code</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Cursor</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Qoder</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Trae</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Jupyter Notebook</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Postman</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">AWS CLI</span>
@@ -583,9 +791,37 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
                         <a href="https://github.com/akash247777/DVR" class="text-white font-semibold hover:underline hover-gold"><i class="fab fa-github mr-2"></i>View GitHub</a>
                     </div>
                 </div>
+
+                <!-- Project 4 - Hidden initially -->
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700 hidden-project" style="display: none;">
+                    <video src="DVR1.mp4" 
+                           autoplay muted loop class="w-full h-48 object-cover">
+                        <source src="C:\Portfolio\design_a_thumbnail_image_for_the_topic.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                         
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Sales Summary Report Generator 📊</h3>
+                        <p class="text-gray-300 mb-4">This is a Python-based desktop application designed to generate sales summary reports for multiple sites by connecting to a SQL Server database. The app uses Tkinter for the GUI, supports parallel processing for faster report generation, and allows exporting reports as .zip files containing individual .txt files for each site.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Pyhton</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">sql</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">Pandas</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">pyodbc</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">concurrent-futures</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">odbc-driver</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">tkinter-gui</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">threading-library</span>
+                            <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold">tkcalendar</span>
+                        </div>
+                        <a href="https://github.com/akash247777/Sales-Report" class="text-white font-semibold hover:underline hover-gold"><i class="fab fa-github mr-2"></i>View GitHub</a>
+                    </div>
+                </div>
+            
             </div>
             <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition hover-gold-border">View All Projects</a>
+                <button id="view-all-projects" class="inline-block border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition hover-gold-border">View All Projects</button>
+                <button id="hide-projects" class="inline-block border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition hover-gold-border" style="display: none;">Show Less</button>
             </div>
         </div>
     </section>
@@ -736,6 +972,88 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
             type();
         }
 
+        // Projects toggle functionality
+        function toggleProjects() {
+            const hiddenProjects = document.querySelectorAll('.hidden-project');
+            const viewAllBtn = document.getElementById('view-all-projects');
+            const hideBtn = document.getElementById('hide-projects');
+            
+            hiddenProjects.forEach(project => {
+                if (project.style.display === 'none') {
+                    project.style.display = 'block';
+                    project.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+            
+            // Toggle button visibility
+            if (viewAllBtn.style.display === 'none') {
+                viewAllBtn.style.display = 'inline-block';
+                hideBtn.style.display = 'none';
+            } else {
+                viewAllBtn.style.display = 'none';
+                hideBtn.style.display = 'inline-block';
+            }
+        }
+
+        // Experience Carousel functionality
+        class ExperienceCarousel {
+            constructor(element) {
+                this.carousel = element;
+                this.photos = element.querySelector('.experience-photos');
+                this.dots = element.querySelectorAll('.carousel-dot');
+                this.currentSlide = 0;
+                this.totalSlides = this.dots.length;
+                this.autoSwipeInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                // Add click listeners to dots
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Start auto-swipe
+                this.startAutoSwipe();
+                
+                // Pause on hover
+                this.carousel.addEventListener('mouseenter', () => this.stopAutoSwipe());
+                this.carousel.addEventListener('mouseleave', () => this.startAutoSwipe());
+            }
+            
+            goToSlide(slideIndex) {
+                this.currentSlide = slideIndex;
+                const translateX = -slideIndex * (100 / this.totalSlides);
+                this.photos.style.transform = `translateX(${translateX}%)`;
+                
+                // Update active dot
+                this.dots.forEach(dot => dot.classList.remove('active'));
+                this.dots[slideIndex].classList.add('active');
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.goToSlide(this.currentSlide);
+            }
+            
+            startAutoSwipe() {
+                this.stopAutoSwipe(); // Clear any existing interval
+                this.autoSwipeInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 3000); // Change slide every 3 seconds
+            }
+            
+            stopAutoSwipe() {
+                if (this.autoSwipeInterval) {
+                    clearInterval(this.autoSwipeInterval);
+                    this.autoSwipeInterval = null;
+                }
+            }
+        }
+
         // Initialize animations when page loads
         window.addEventListener('DOMContentLoaded', () => {
             // Start typing animations
@@ -758,7 +1076,103 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
                     }, 500);
                 });
             }
+            
+            // Add event listeners for project toggle buttons
+            const viewAllBtn = document.getElementById('view-all-projects');
+            const hideBtn = document.getElementById('hide-projects');
+            
+            if (viewAllBtn) {
+                viewAllBtn.addEventListener('click', toggleProjects);
+            }
+            
+            if (hideBtn) {
+                hideBtn.addEventListener('click', toggleProjects);
+            }
+            
+            // Initialize experience carousels
+            const carousels = document.querySelectorAll('.experience-carousel');
+            carousels.forEach(carousel => {
+                new ExperienceCarousel(carousel);
+            });
+            
+            // Initialize night sky animation
+            initializeNightSky();
         });
+        
+        // Night Sky Animation Functions
+        function initializeNightSky() {
+            const nightSky = document.getElementById('night-sky');
+            
+            // Create stars
+            createStars(nightSky, 200);
+            
+            // Create meteors periodically
+            setInterval(() => {
+                createMeteor(nightSky);
+            }, 3000); // Create a meteor every 3 seconds
+        }
+        
+        function createStars(container, count) {
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random size
+                const sizes = ['small', 'medium', 'large'];
+                const weights = [0.7, 0.25, 0.05]; // 70% small, 25% medium, 5% large
+                const randomSize = getWeightedRandom(sizes, weights);
+                star.classList.add(randomSize);
+                
+                // Random position
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                
+                // Random animation delay and duration
+                star.style.animationDelay = Math.random() * 2 + 's';
+                star.style.animationDuration = (1.5 + Math.random() * 1) + 's';
+                
+                container.appendChild(star);
+            }
+        }
+        
+        function createMeteor(container) {
+            const meteor = document.createElement('div');
+            meteor.classList.add('meteor');
+            
+            // Random starting position (from top-right area)
+            const startX = window.innerWidth + Math.random() * 200;
+            const startY = -100 + Math.random() * 200;
+            
+            meteor.style.left = startX + 'px';
+            meteor.style.top = startY + 'px';
+            
+            // Random animation duration (2-4 seconds)
+            const duration = 2 + Math.random() * 2;
+            meteor.style.animation = `meteor-fall ${duration}s linear forwards`;
+            
+            container.appendChild(meteor);
+            
+            // Remove meteor after animation completes
+            setTimeout(() => {
+                if (meteor.parentNode) {
+                    meteor.parentNode.removeChild(meteor);
+                }
+            }, duration * 1000);
+        }
+        
+        function getWeightedRandom(items, weights) {
+            const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+            let random = Math.random() * totalWeight;
+            
+            for (let i = 0; i < items.length; i++) {
+                random -= weights[i];
+                if (random <= 0) {
+                    return items[i];
+                }
+            }
+            
+            return items[items.length - 1];
+        }
     </script>
 </body>
 </html>
