@@ -340,7 +340,7 @@
         .experience-carousel {
             position: relative;
             width: 100%;
-            height: 260px;
+            height: 250px;
             overflow: hidden;
             border-radius: 10px;
             margin-bottom: 16px;
@@ -348,15 +348,15 @@
         
         .experience-photos {
             display: flex;
-            width: 331%; /* Adjust based on number of photos */
-            height: 200%;
-            transition: transform 0.1s ease-in-out;
+            width: 100%; /* Adjusted to 100% */
+            height: 250px;
+            transition: transform 0.3s ease-in-out;
         }
         
         .experience-photo {
-            width: 33.222%; /* 100% / number of photos */
-            height: 130%;
-            object-fit: flex;  
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* Changed from cover to contain to show full images */
             
             flex-shrink: 0;
         }
@@ -532,14 +532,33 @@
                         <!-- Photo Carousel for Experience 1 -->
                         <div class="experience-carousel" data-carousel="experience-1">
                             <div class="experience-photos">
-                                <img src="a1.png" alt="Apollo Pharmacies Office" class="experience-photo">
-                                <img src="a2.png" alt="AI Development" class="experience-photo">
-                                <img src="a3.png" alt="Team Collaboration" class="experience-photo">
+                                <img src="Apollo/a1.png" alt="Apollo Pharmacies Office" class="experience-photo">
+                                <img src="Apollo/a2.jpg" alt="AI Development1" class="experience-photo">
+                                <img src="Apollo/a3.png" alt="AI Development2" class="experience-photo">
+                                <img src="Apollo/a4.png" alt="AI Development3" class="experience-photo">
+                                <img src="Apollo/a5.png" alt="AI Development4" class="experience-photo">
+                                <img src="Apollo/a6.png" alt="AI Development5" class="experience-photo">
+                                <img src="Apollo/a7.png" alt="AI Development6" class="experience-photo">
+                                <img src="Apollo/a8.png" alt="AI Development7" class="experience-photo">
+                                <img src="Apollo/a9.png" alt="AI Development8" class="experience-photo">
+                                <img src="Apollo/a10.png" alt="AI Development9" class="experience-photo">
+                                <img src="Apollo/a11.png" alt="AI Development10" class="experience-photo">
+                                <img src="Apollo/a12.png" alt="AI Development11" class="experience-photo">
                             </div>
                             <div class="carousel-indicators">
                                 <div class="carousel-dot active" data-slide="0"></div>
                                 <div class="carousel-dot" data-slide="1"></div>
                                 <div class="carousel-dot" data-slide="2"></div>
+                                <div class="carousel-dot" data-slide="3"></div>
+                                <div class="carousel-dot" data-slide="4"></div>
+                                <div class="carousel-dot" data-slide="5"></div>
+                                <div class="carousel-dot" data-slide="6"></div>
+                                <div class="carousel-dot" data-slide="7"></div>
+                                <div class="carousel-dot" data-slide="8"></div>
+                                <div class="carousel-dot" data-slide="9"></div>
+                                <div class="carousel-dot" data-slide="10"></div>
+                                <div class="carousel-dot" data-slide="11"></div>
+                                <div class="carousel-dot" data-slide="12"></div>
                             </div>
                         </div>
                     </div>
@@ -568,14 +587,16 @@
                         <!-- Photo Carousel for Experience 2 -->
                         <div class="experience-carousel" data-carousel="experience-2">
                             <div class="experience-photos">
-                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop" alt="Turing Remote Work" class="experience-photo">
-                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop" alt="AI Prompt Engineering" class="experience-photo">
-                                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&h=200&fit=crop" alt="ML Model Training" class="experience-photo">
+                                <img src="Turing/t1.png" alt="Turing Remote Work" class="experience-photo">
+                                <img src="Turing/t2.png" alt="Turing Remote Work" class="experience-photo">
+                                <img src="Turing/t3.png" alt="Turing Remote Work" class="experience-photo">
+                                <img src="Turing/t4.png" alt="Turing Remote Work" class="experience-photo">
                             </div>
                             <div class="carousel-indicators">
                                 <div class="carousel-dot active" data-slide="0"></div>
                                 <div class="carousel-dot" data-slide="1"></div>
                                 <div class="carousel-dot" data-slide="2"></div>
+                                <div class="carousel-dot" data-slide="3"></div>
                             </div>
                         </div>
                     </div>
@@ -611,14 +632,53 @@
                         <p class="text-white mt-10"></p>
                         <div class="experience-carousel" data-carousel="experience-3">
                             <div class="experience-photos">
-                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop" alt="Infosys Office" class="experience-photo">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Data Analysis" class="experience-photo">
-                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop" alt="Healthcare ML" class="experience-photo">
+                                <img src="Infosys/i1.png" alt="Turing Remote Work" class="experience-photo">
+                                <img src="Infosys/i2.png" alt="AI Prompt Engineering" class="experience-photo">
+                                <img src="Infosys/i3.png" alt="ML Model Training" class="experience-photo">
+                                <img src="Infosys/i4.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i5.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i6.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i7.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i8.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i9.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i10.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i11.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i12.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i13.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i14.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i15.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i16.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i17.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i18.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i19.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i20.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i21.png" alt="AI Model Deployment" class="experience-photo">
+                                <img src="Infosys/i22.png" alt="AI Model Deployment" class="experience-photo">
                             </div>
                             <div class="carousel-indicators">
                                 <div class="carousel-dot active" data-slide="0"></div>
                                 <div class="carousel-dot" data-slide="1"></div>
                                 <div class="carousel-dot" data-slide="2"></div>
+                                <div class="carousel-dot" data-slide="3"></div>
+                                <div class="carousel-dot" data-slide="4"></div>
+                                <div class="carousel-dot" data-slide="5"></div>
+                                <div class="carousel-dot" data-slide="6"></div>
+                                <div class="carousel-dot" data-slide="7"></div>
+                                <div class="carousel-dot" data-slide="8"></div>
+                                <div class="carousel-dot" data-slide="9"></div>
+                                <div class="carousel-dot" data-slide="10"></div>
+                                <div class="carousel-dot" data-slide="11"></div>
+                                <div class="carousel-dot" data-slide="12"></div>
+                                <div class="carousel-dot" data-slide="13"></div>
+                                <div class="carousel-dot" data-slide="14"></div>
+                                <div class="carousel-dot" data-slide="15"></div>
+                                <div class="carousel-dot" data-slide="16"></div>
+                                <div class="carousel-dot" data-slide="17"></div>
+                                <div class="carousel-dot" data-slide="18"></div>
+                                <div class="carousel-dot" data-slide="19"></div>
+                                <div class="carousel-dot" data-slide="20"></div>
+                                <div class="carousel-dot" data-slide="21"></div>
+                                <div class="carousel-dot" data-slide="22"></div>
                             </div>
                         </div>
                     </div>
@@ -643,7 +703,11 @@
                     <div class="flex flex-wrap gap-3 skills-hover">
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Python</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">SQL</span>
-                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">FastAPI</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">HTML</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">CSS</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">JavaScript</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">React</span>
+                        <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Vue.js</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">TensorFlow</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">PyTorch</span>
                         <span class="gold-bg text-black text-xs px-2 py-1 rounded font-semibold skills-hover">Machine Learning</span>
@@ -719,7 +783,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700">
-                    <video src="RAG.mp4" 
+                    <video src="video/RAG.mp4" 
                            autoplay muted loop class="w-full h-48 object-cover">
                         <source src="C:\Portfolio\design_a_thumbnail_image_for_the_topic.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -746,7 +810,7 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
                 
                 <!-- Project 2 -->
                 <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700">
-                    <video src="N8N.mp4" 
+                    <video src="video/N8N.mp4" 
                            autoplay muted loop class="w-full h-48 object-cover">
                         <source src="C:\Portfolio\design_a_thumbnail_image_for_the_topic.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -768,7 +832,7 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
                 
                 <!-- Project 3 -->
                 <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700">
-                    <video src="DVR1.mp4" 
+                    <video src="video/DVR1.mp4" 
                            autoplay muted loop class="w-full h-48 object-cover">
                         <source src="C:\Portfolio\design_a_thumbnail_image_for_the_topic.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -794,7 +858,7 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
 
                 <!-- Project 4 - Hidden initially -->
                 <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700 hidden-project" style="display: none;">
-                    <video src="DVR1.mp4" 
+                    <video src="video/Sales_report.mp4" 
                            autoplay muted loop class="w-full h-48 object-cover">
                         <source src="C:\Portfolio\design_a_thumbnail_image_for_the_topic.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -1026,7 +1090,7 @@ Welcome to the Apollo Pharmacy Database Chat project! This interactive Streamlit
             
             goToSlide(slideIndex) {
                 this.currentSlide = slideIndex;
-                const translateX = -slideIndex * (100 / this.totalSlides);
+                const translateX = -slideIndex * 100;
                 this.photos.style.transform = `translateX(${translateX}%)`;
                 
                 // Update active dot
